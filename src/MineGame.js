@@ -46,13 +46,9 @@ export function MineGame(props) {
 
   const node = {
     backgroundColor:
-      "rgb(" +
-      Math.floor(Math.random() * 256) +
-      ", " +
-      Math.floor(Math.random() * 256) +
-      ", " +
-      Math.floor(Math.random() * 256) +
-      ")",
+      "rgb(" + Math.floor(Math.random() * 256) + ", "
+      + Math.floor(Math.random() * 256) + ", "
+      + Math.floor(Math.random() * 256) + ")",
     border: "1px solid black"
   };
 
@@ -60,7 +56,7 @@ export function MineGame(props) {
     <div>
       <div style={wrapper}>
         {Array.from(Array(rows * columns)).map((element, index) => (
-          <div id="{index}" style={node}>
+          <div key={index} style={node}>
             {index}
           </div>
         ))}
